@@ -9,6 +9,11 @@ let ticket = "" ;
 alert('Bienvenido al carrito de compras');
 nombreUser = prompt("Ingrese su nombre");
 
+function ticketTotal(nombreItem, precioItem, cantidad) {
+    ticket = ticket + `nombre del item : ${nombreItem} \n precio unitario: $${precioItem} \n cantidad: ${cantidad} \n subtotal: $${cantidad * precioItem} \n\n`
+    total = total + cantidad * precioItem;
+}
+
 do{
     nombreItem = prompt("Nombre del item");
     precioItem = Number(prompt("Ingresar el precio del item"));
@@ -22,8 +27,8 @@ do{
     while (cantidad <= 0 ) {
         cantidad = parseInt(prompt('Cantidad invalida'));
     }
-    ticket = ticket + `nombre del item : ${nombreItem} \n precio unitario: $${precioItem} \n cantidad: ${cantidad} \n subtotal: $${cantidad * precioItem} \n\n`
-    total = total + cantidad * precioItem;
+
+    ticketTotal(nombreItem, precioItem, cantidad);
 
     opcion = prompt("¿Desea añadir otro item?");
 
